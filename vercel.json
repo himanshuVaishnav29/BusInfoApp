@@ -4,19 +4,19 @@
       { "src": "index.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { 
-        "src": "/clientSide.js", 
+      {
+        "src": "/clientSide.js",
         "dest": "/clientSide.js",
-        "headers": [
-          { "key": "Content-Type", "value": "text/javascript" }
-        ]
+        "headers": {
+          "Content-Type": "text/javascript"
+        }
       },
-      { 
-        "src": "/static/(.*)", 
+      {
+        "src": "/static/(.*)",
         "dest": "/$1"
       },
-      { 
-        "src": "/(.*)", 
+      {
+        "src": "/(.*)",
         "dest": "/"
       }
     ]
