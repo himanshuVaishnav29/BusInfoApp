@@ -50,7 +50,7 @@
 
 
       <!-- INPUT FORM *************************************************************************** -->
-    <div class="form-container">
+    <!-- <div class="form-container">
         <form action="/getQueryResult" method="post">
 
             <input placeholder="Enter src"  type="text" name="source"  list="similarSourcesList" id="sourceInput" autocomplete="off"  required/>
@@ -66,7 +66,40 @@
             <button type="submit">Find bus</button>
 
         </form>
-    </div>
+    </div> -->
+
+        <div class="form-container">
+          <form action="/getQueryResult" method="post">
+            <div class="row">
+              <input placeholder="Enter src"  type="text" name="source"   id="sourceInput" autocomplete="off" list="sourceSuggestionList"  required/>
+            </div>
+            
+            <div class="row" id="suggestionSrcListDiv">
+              <datalist id="sourceSuggestionList">
+              </datalist>
+            </div>
+            
+            <div class="row">
+              <span> &#8614</span>
+            </div>
+            <div class="row">
+              <input placeholder="Enter dest" type="text" name="destination"  id="destinationInput" autocomplete="off" list="destinationSuggestionList" required/>
+            </div>
+            <div class="row" id="suggestionDestListDiv">
+              <datalist id="destinationSuggestionList">
+              </datalist>
+            </div>
+            <div class="row">
+              <button type="submit">Find bus</button>
+            </div>
+            
+          </form>
+        </div>
+
+
+
+
+    
     <!-- TABLE *********************************************************************** -->
     <div id="emptyTableMessage"></div>
     <div class="table-responsive" id="mainTable">

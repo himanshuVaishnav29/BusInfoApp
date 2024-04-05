@@ -79,7 +79,43 @@ async function storeSourcesViaDestinations(){
 }
 
 
+const sourceInput=document.getElementById("sourceInput");
+const destinationInput=document.getElementById("destinationInput");
+const sourceSuggestionList=document.getElementById("sourceSuggestionList");
+sourceInput.onkeyup=()=>{
+    let srcResults=[];
+    const input=sourceInput.value;
+    if(input.length){
+        srcResults=allSources.filter((keywords)=>{
+            return keywords.toLowerCase().includes(input.toLowerCase());
+        });
+    };
+    sourceSuggestionList.innerHTML="";
+    srcResults.forEach((item)=>{
+        const option=document.createElement('option');
+        option.innerText=item;
+        sourceSuggestionList.appendChild(option);
+    })
+    console.log("Source suggestions: ",srcResults);
+}
 
+
+destinationInput.onkeyup=()=>{
+    let destResults=[];
+    const input=destinationInput.value;
+    if(input.length){
+        destResults=allDestinations.filter((keywords)=>{
+            return keywords.toLowerCase().includes(input.toLowerCase());
+        });
+    };
+    destinationSuggestionList.innerHTML="";
+    destResults.forEach((item)=>{
+        const option=document.createElement('option');
+        option.innerText=item;
+        destinationSuggestionList.appendChild(option);
+    })
+    console.log("Destionation suggestions: ",destResults);
+}
 
 
 

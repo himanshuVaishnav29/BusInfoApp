@@ -1,3 +1,4 @@
+
 .form-container {
     text-align: center;
     margin-top: 10px;
@@ -20,7 +21,7 @@
     cursor: pointer;
 }
 
-.form-container button:hover {
+.form-container form div button:hover {
     background-color: #45a049;
 }
 span{
@@ -48,3 +49,28 @@ table {
 
 }
 
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .form-container .row {
+    display: flex;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    
+  }
+  
+  .form-container .row input {
+    margin: 0 5px; /* Adjust spacing between inputs as needed */
+  }
+  
+  .form-container button {
+    margin-top: 10px; /* Adjust spacing between inputs and button as needed */
+  }
+  
