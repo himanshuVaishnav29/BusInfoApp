@@ -4,13 +4,17 @@
       { "src": "index.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/" }
-    ],
-    "rewrites": [
-      { "source": "/clientSide.js", "destination": "/clientSide.js" }
-    ],
-    "headers": [
-      { "source": "/clientSide.js", "headers": [{ "key": "Content-Type", "value": "text/javascript" }] }
+      { 
+        "src": "/clientSide.js", 
+        "dest": "/clientSide.js",
+        "headers": [
+          { "key": "Content-Type", "value": "text/javascript" }
+        ]
+      },
+      { 
+        "src": "/(.*)", 
+        "dest": "/"
+      }
     ]
   }
   
