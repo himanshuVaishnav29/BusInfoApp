@@ -5,6 +5,12 @@
     ],
     "routes": [
       { "src": "/(.*)", "dest": "/" }
+    ],
+    "rewrites": [
+      { "source": "/clientSide.js", "destination": "/clientSide.js" }
+    ],
+    "headers": [
+      { "source": "/clientSide.js", "headers": [{ "key": "Content-Type", "value": "text/javascript" }] }
     ]
   }
   

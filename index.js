@@ -5,7 +5,8 @@ const path=require("path");
 const BUSINFO=require("./models/busInfoModel");
 const app=express();
 
-app.use(express.static("."));
+// app.use(express.static("."));
+app.use(express.static(__dirname));
 require("dotenv").config();  
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
