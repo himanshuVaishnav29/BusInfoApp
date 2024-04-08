@@ -7,10 +7,10 @@ const app=express();
 const cors=require("cors");
 app.use(cors());
 
-// app.use(express.static("."));
+app.use(express.static("."));
 // app.use(express.static(__dirname));
 
-app.use(express.static("."));
+app.use(express.static("../client"));
 
 
 require("dotenv").config();  
@@ -26,20 +26,13 @@ mongoose
     .then(()=>console.log("MongoDB connected"))
     .catch((err)=>console.log("Error connecting DB",err));
 
-const indexPath = path.join(__dirname, "index.html");
+// const indexPath = path.join(__dirname, "/index.html");
 
 //RENDERING HOME PAGE
-app.get("/",(req,res)=>{
+app.get("/",(req,res)=>{ 
+    // console.log(indexPath);
     // res.render('home');
-    fs.readFile(indexPath,"utf-8",(err,data)=>{
-        if(err){
-            console.log("Error reading index.html: ",err);
-            // console.log(path.join(__dirname));
-        }else{
-            res.send(data);
-        }
-    })
-
+    res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 let currentRequest=[];
 
@@ -93,10 +86,10 @@ app.get("/getAllData",async (req,res)=>{
     }
 })
 
-app.listen(3600,(err)=>{
+app.listen(3000,(err)=>{
     if(err)
     console.log("Error starting server");
     else{
-        console.log(`Server listening at port 3600`);
+        console.log(`Server listening at port 3000`);
     }
 })
