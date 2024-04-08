@@ -9,5 +9,6 @@
     { "src": "/getCurrentRequest", "dest": "/index.js"},
     { "src": "/logo.jpg", "dest": "/logo.jpg"},
     { "src": "/styles.css", "dest": "/styles.css"}
+    
   ]
 }

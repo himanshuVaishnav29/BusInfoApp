@@ -6,7 +6,11 @@ const BUSINFO=require("./models/busInfoModel");
 const app=express();
 
 // app.use(express.static("."));
-app.use(express.static(__dirname));
+// app.use(express.static(__dirname));
+
+app.use(express.static(path.join(__dirname)));
+
+
 require("dotenv").config();  
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
@@ -28,6 +32,7 @@ app.get("/",(req,res)=>{
     fs.readFile(indexPath,"utf-8",(err,data)=>{
         if(err){
             console.log("Error reading index.html: ",err);
+            // console.log(path.join(__dirname));
         }else{
             res.send(data);
         }
