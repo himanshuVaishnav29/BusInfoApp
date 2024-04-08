@@ -4,11 +4,24 @@
     { "src": "index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/" },
-    { "src": "/getAllData", "dest": "/index.js"  },
-    { "src": "/getCurrentRequest", "dest": "/index.js"},
-    { "src": "/logo.jpg", "dest": "/logo.jpg"},
-    { "src": "/styles.css", "dest": "/styles.css"}
-    
+    { 
+      "src": "/(.*)", 
+      "dest": "/" 
+    },
+    { 
+      "src": "/styles.css", 
+      "dest": "/styles.css", 
+      "headers": { "Content-Type": "text/css" }
+    },
+    { 
+      "src": "/clientSide.js", 
+      "dest": "/clientSide.js", 
+      "headers": { "Content-Type": "application/javascript" }
+    },
+    {
+      "src": "/logo.jpg",
+      "dest": "/logo.jpg",
+      "headers": { "Content-Type": "image/jpeg" }
+    }
   ]
 }
