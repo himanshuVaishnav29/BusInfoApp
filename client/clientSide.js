@@ -14,7 +14,7 @@ async function  getDataAndDisplay(){
        if(data.length==0){
             mainTable.style.display = "none";
             // emptyTableMessage.textContent = "Find your route now!";
-            emptyTableMessage.innerHTML=`<span style='font-size:50px;'>Find your route now!&#128653;</span>`
+            emptyTableMessage.innerHTML=`<span style='font-size:50px; color:black;'>Find your route now!&#128653;</span>`
             emptyTableMessage.style.display = "block";
        }else{
         emptyTableMessage.style.display = "none";
