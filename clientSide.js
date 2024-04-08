@@ -4,7 +4,7 @@
 async function  getDataAndDisplay(){
     // console.log("js file called");
    try{
-       const response=await fetch("https://main--gleaming-bonbon-983efb.netlify.app/getCurrentRequest");
+       const response=await fetch("/getCurrentRequest");
        const tableBody=document.getElementById("tableBody");
        const data=await response.json();
     //    const p=document.getElementById("emptyTableMessage");
@@ -51,7 +51,7 @@ let allSources=[];
 let allDestinations=[];
 async function storeSourcesViaDestinations(){
    try{
-     const response=await fetch("https://main--gleaming-bonbon-983efb.netlify.app/getAllData");
+     const response=await fetch("/getAllData");
        const tableBody=document.getElementById("tableBody");
        const data=await response.json();
         console.log(data);
