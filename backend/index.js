@@ -10,8 +10,8 @@ app.use(cors());
 // app.use(express.static("."));
 // app.use(express.static(__dirname));
 
-app.use(express.static("../client"));
-
+// app.use(express.static("../client"));
+app.use(express.static(path.join(__dirname, "../client")));
 
 require("dotenv").config();  
 app.use(express.urlencoded({extended:false}));
@@ -26,13 +26,15 @@ mongoose
     .then(()=>console.log("MongoDB connected"))
     .catch((err)=>console.log("Error connecting DB",err));
 
-// const indexPath = path.join(__dirname, "/index.html");
 
 //RENDERING HOME PAGE
 app.get("/",(req,res)=>{ 
-    // console.log(indexPath);
-    // res.render('home');
-    res.sendFile(path.join(__dirname, '../client/index.html'));
+    fs.readFile(path.join(__dirname, "../client/index.html"),"utf8",(err,data)=>{
+        if(err)console.log("Error fetching index.html",err);
+        else
+        // res.setHeader({'content-type':'text/html'});
+        res.send(data);
+    })
 });
 let currentRequest=[];
 
