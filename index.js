@@ -8,7 +8,7 @@ const app=express();
 // app.use(express.static("."));
 // app.use(express.static(__dirname));
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static("."));
 
 
 require("dotenv").config();  
