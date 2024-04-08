@@ -11,7 +11,7 @@ app.use(cors());
 // app.use(express.static(__dirname));
 
 // app.use(express.static("../client"));
-app.use(express.static("client"));
+app.use(express.static(path.join(__dirname, '../client')));
 
 require("dotenv").config();  
 app.use(express.urlencoded({extended:false}));
